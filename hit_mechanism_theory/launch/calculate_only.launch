@@ -1,0 +1,7 @@
+<launch>
+  <node 
+    name="main"
+    pkg="hit_mechanism_theory"
+    type="calculate_only" 
+    output="screen"/> 
+</launch>

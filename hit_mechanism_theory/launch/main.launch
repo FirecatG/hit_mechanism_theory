@@ -1,0 +1,30 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find hit_mechanism_theory)/urdf/four_links.urdf" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find hit_mechanism_theory)/config/rviz.rviz" />
+
+  <!-- <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />  -->
+    
+  <node 
+    name="main"
+    pkg="hit_mechanism_theory"
+    type="main" 
+    output="screen"/> 
+    
+    <include
+      file="$(find hit_mechanism_theory)/launch/gazebo.launch" />
+</launch>
