@@ -15,11 +15,6 @@ for four_links robot</p>
   <depend>rviz</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo</depend>
-  <depend>roscpp</depend>
-  <depend>urdf</depend>
-  <depend>xacro</depend>
-  <depend>gazebo_ros</depend>
-  <depend>std_msgs</depend>
   <export>
     <architecture_independent />
   </export>

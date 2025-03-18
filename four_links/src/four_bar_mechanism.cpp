@@ -1,10 +1,13 @@
 #include "four_bar_mechanism.h"
+#include "ros/console.h"
 #include <cmath>
 #include <stdexcept>
 FourBarMechanism::FourBarMechanism(double omega, double l_AB, double l_BC, 
                     double l_CD, double l_AD, double l_BE, double l_EF)
         : omega_(omega), l_AB_(l_AB), l_BC_(l_BC), l_CD_(l_CD),
-          l_AD_(l_AD), l_BE_(l_BE), l_EF_(l_EF) ,rates_({0,0}) {}
+          l_AD_(l_AD), l_BE_(l_BE), l_EF_(l_EF) ,rates_({0,0}) ,phi_{0,0,0} {
+              
+          }
 
 FourBarMechanism::~FourBarMechanism() = default;
 
@@ -34,12 +37,13 @@ Result FourBarMechanism::calculate_step(double phi_deg) {
     
     const double discriminant = pow(A0, 2) + pow(B0, 2) - pow(C0, 2);
     if (discriminant < 0) {
-        throw std::runtime_error("虚根出现");
+        ROS_ERROR("虚根出现");
+        return {0, 0, 0, 0, 0, 0};
     }
     
     const double theta_i = 2 * atan2(B0 + sqrt(discriminant), A0 + C0);
 
-    phi_[1] = theta_i;//保存角度供ROS使用
+    
 
     const Point C = {
         B.x + l_BC_ * cos(theta_i),
@@ -58,7 +62,8 @@ Result FourBarMechanism::calculate_step(double phi_deg) {
     // 角加速度计算
     const double ddphi_i = calculate_angular_acceleration(B, C, D, theta_i, rates_.dphi_i);
 
-    phi_[2] = atan2(D.y - C.y , D.x - C.x);//保存角度供ROS使用
+    this->phi_[1] = theta_i - phi  ;//保存角度供ROS使用
+    this->phi_[2] = atan2(C.y - D.y , C.x - D.x)  ;//保存角度供ROS使用
     
     return {
         F.x, F.y,

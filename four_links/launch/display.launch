@@ -14,13 +14,14 @@
     type="rviz"
     args="-d $(find four_links)/config/rviz.rviz" />
 
- <node
+  <!-- <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
-    type="joint_state_publisher_gui" />
+    type="joint_state_publisher_gui" />  -->
     
-  <!-- <node
+  <node 
     name="main"
     pkg="four_links"
-    type="main" /> -->
+    type="main" 
+    output="screen"/> 
 </launch>
