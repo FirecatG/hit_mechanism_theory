@@ -1,0 +1,24 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find four_links)/urdf/four_links.urdf" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find four_links)/config/rviz.rviz" />
+  <node 
+    name="main"
+    pkg="four_links"
+    type="publish_per_30_degree" 
+    output="screen"/> 
+    
+    <include
+      file="$(find four_links)/launch/gazebo.launch" />
+</launch>

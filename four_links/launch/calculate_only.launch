@@ -1,0 +1,7 @@
+<launch>
+  <node 
+    name="main"
+    pkg="four_links"
+    type="calculate_only" 
+    output="screen"/> 
+</launch>

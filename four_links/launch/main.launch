@@ -24,4 +24,7 @@
     pkg="four_links"
     type="main" 
     output="screen"/> 
+    
+    <include
+      file="$(find four_links)/launch/gazebo.launch" />
 </launch>
