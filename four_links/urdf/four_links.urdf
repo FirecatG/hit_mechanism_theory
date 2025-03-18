@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="four_links">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0420417072243827 -0.0743722309975965 -0.0245209736544894"
+        rpy="0 0 0" />
+      <mass
+        value="0.0209510308536538" />
+      <inertia
+        ixx="4.31058987194356E-07"
+        ixy="9.00920390220769E-22"
+        ixz="1.62493385373501E-22"
+        iyy="5.33666050979322E-05"
+        iyz="3.4274231660628E-24"
+        izz="5.34484802375657E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="linkAB">
+    <inertial>
+      <origin
+        xyz="0.0371817038425767 -3.85802501057242E-15 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.00950214387592875" />
+      <inertia
+        ixx="1.97084106558777E-07"
+        ixy="3.01424615214323E-21"
+        ixz="-3.73195584766839E-23"
+        iyy="5.19422383682696E-06"
+        iyz="1.34812544669512E-23"
+        izz="5.23293887878693E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkAB.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkAB.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointA"
+    type="continuous">
+    <origin
+      xyz="-0.126714490675986 0.0295209736544894 -0.0743722309975965"
+      rpy="-1.5707963267949 -1.52106200526056 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkAB" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="linkBC">
+    <inertial>
+      <origin
+        xyz="0.0192741843838924 0.0104495924501752 0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0178982753669132" />
+      <inertia
+        ixx="1.35547993820406E-06"
+        ixy="1.75334976515786E-06"
+        ixz="-5.41007855074171E-22"
+        iyy="2.38038341844386E-05"
+        iyz="4.03203436839883E-23"
+        izz="2.48610095331941E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkBC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkBC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointB"
+    type="continuous">
+    
+    <origin
+      xyz="0.0794339781671298 -0.0353993494464525 -0.02"
+      rpy="0 0 -1.23790614865718" />
+    <parent
+      link="linkAB" />
+    <child
+      link="linkBC" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="linkCD">
+    <inertial>
+      <origin
+        xyz="-0.0678253502735416 -3.27073437778047E-14 -0.005"
+        rpy="0 0 0" />
+      <mass
+        value="0.0167330198618603" />
+      <inertia
+        ixx="3.44857715381246E-07"
+        ixy="-1.49554254749587E-20"
+        ixz="-1.59411135279558E-22"
+        iyy="2.73613018527324E-05"
+        iyz="4.07206418601221E-23"
+        izz="2.74272759037493E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkCD.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_links/meshes/linkCD.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointD"
+    type="continuous">
+    <origin
+      xyz="0.0432855093240141 0.0295209736544894 -0.0743722309975965"
+      rpy="1.5707963267949 1.09024680282379 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkCD" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
