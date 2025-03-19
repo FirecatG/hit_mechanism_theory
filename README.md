@@ -17,11 +17,11 @@
 	catkin build
 	source devel/setup.bash
 ```
-  **启动转动仿真（每一度计算一次）**
+  **启动转动仿真（每一度计算一次）**  
 	`roslaunch hit_machanism_theory main`
-  **启动计算**
+  **启动计算**  
 	`roslaunch hit_machanism_theory calculate_only`
-  **启动每30度一次计算**
+  **启动每30度一次计算**  
 	`roslaunch hit_machanism_theory publish_per_30_degree`
 
 
