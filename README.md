@@ -13,7 +13,7 @@
 	mkdir -p four_links_ws/src
 	cd four_links_ws/src
 	catkin_init_workspace
-	git clone git@github.com:FirecatG/HIT_machanism_theory.git
+	git clone git@github.com:FirecatG/hit_machanism_theory.git
 	rosdep install --from-paths . --ignore-src -y
 	cd ..
 	catkin build
