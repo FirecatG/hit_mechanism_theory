@@ -2,6 +2,8 @@
 
 **功能**：计算四杆机构上某点的位置速度，加速度分量，并完成相关仿真
 **作者**：FirecatG
+
+
 ---
 ## 一、完成情况&使用方法
 
@@ -12,7 +14,7 @@
 	cd four_links_ws/src
 	catkin_init_workspace
 	git clone git@github.com:FirecatG/HIT_machanism_theory.git
-  rosdep install --from-paths . --ignore-src -y
+	rosdep install --from-paths . --ignore-src -y
 	cd ..
 	catkin build
 	source devel/setup.bash
