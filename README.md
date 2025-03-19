@@ -18,14 +18,14 @@
 	source devel/setup.bash
 ```
   **启动转动仿真（每一度计算一次）**  
-	`roslaunch hit_machanism_theory main`
+	`roslaunch hit_machanism_theory main`  
   **启动计算**  
-	`roslaunch hit_machanism_theory calculate_only`
+	`roslaunch hit_machanism_theory calculate_only`  
   **启动每30度一次计算**  
-	`roslaunch hit_machanism_theory publish_per_30_degree`
+	`roslaunch hit_machanism_theory publish_per_30_degree`  
 
 
-- **方法（2）：（无需ROS环境）使用python制图**
+- **方法（2）：（无需ROS环境）使用python制图**  
 	`python3 scripts/chart.py`
 
 #### 2.仿真
